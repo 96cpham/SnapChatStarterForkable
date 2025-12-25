@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Text, View, TouchableOpacity, StyleSheet } from "react-native";
+import { Text, View, TouchableOpacity, StyleSheet, Image } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
 // import Ionicons from "react-native-vector-icons/Ionicons";
@@ -80,11 +80,11 @@ export default function ChatScreen({ navigation }) {
               }}
               key={chat.chatId}
             >
-              <Ionicons
-                style={styles.userIcon}
-                name="person-outline"
-                size={36}
-                color="lightgrey"
+
+              <Image
+              style={styles.userIcon}
+              source={{
+          uri: '../assets/SNEATS-ghost.png'}}
               />
               <Text style={styles.userName}> {chat.chatId} </Text>
               <Ionicons
@@ -104,7 +104,7 @@ export default function ChatScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#FFF",
+    backgroundColor: "#f",
   },
   userButton: {
     padding: 25,
@@ -116,6 +116,8 @@ const styles = StyleSheet.create({
     position: "absolute",
     left: 5,
     top: 5,
+    width: 36,
+    height: 36
   },
   userName: {
     position: "absolute",
